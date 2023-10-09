@@ -1,5 +1,6 @@
  import 'package:flutter/material.dart';
 import 'package:hotel_hunter/Models/AppConstants.dart';
+import 'package:hotel_hunter/Models/UserObjects.dart';
 import 'package:hotel_hunter/Screens/loginPage.dart';
 import 'package:hotel_hunter/Screens/personalInfo.dart';
 import 'package:hotel_hunter/Screens/viewProfilePage.dart';
@@ -84,7 +85,7 @@ class _AccountPageState extends State<AccountPage> {
                         context,
                       MaterialPageRoute(
                         builder: (context) => ViewProfilePage(
-                          contact:  AppConstants.currentUser?.createContactFromUser(),
+                          contact: Contact()// AppConstants.currentUser!.createContactFromUser(),
                         ),
                       ) 
                        );
@@ -93,7 +94,7 @@ class _AccountPageState extends State<AccountPage> {
                     backgroundColor: Colors.black,
                     radius: MediaQuery.of(context).size.width/9.5,
                     child: CircleAvatar(
-                    backgroundImage: AppConstants.currentUser!.displayImage,
+                    backgroundImage: AssetImage(""), //AppConstants.currentUser!.displayImage,
                     radius: MediaQuery.of(context).size.width/10,
                     ),
                   ),
@@ -104,13 +105,13 @@ class _AccountPageState extends State<AccountPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AutoSizeText(AppConstants.currentUser!.fullName!,
+                  AutoSizeText("",//AppConstants.currentUser!.fullName!,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25, 
                     ),
                   ),
-                  AutoSizeText(AppConstants.currentUser!.email!,
+                  AutoSizeText("",//AppConstants.currentUser!.email!,
                   style: const TextStyle(
                     fontSize: 25, 
                     ),

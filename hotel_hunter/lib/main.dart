@@ -20,7 +20,16 @@ import 'firebase_options.dart';
  void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
+
+    
+    //options: DefaultFirebaseOptions.currentPlatform,
+    options: FirebaseOptions(  
+      apiKey: "AIzaSyD6aXcPCJA0cZrRQTjehxhNQwSZb95b9ao",
+  databaseURL: "https://eventually-183fb-default-rtdb.firebaseio.com",
+  projectId: "eventually-183fb",
+  messagingSenderId: "732313027588",
+  appId: "1:732313027588:web:932fa4236ad909a3a86151",
+)
   );
   runApp(const MyApp());
 } 

@@ -90,6 +90,7 @@ void getPostingInfoFromSnapshot(DocumentSnapshot snapshot){
 
   Future<void> getHostFromFirestore() async{
     await host!.getContactInfoFromFireStore();
+    await this.host!.getImageFromStorage();
   }
 
 List<String>? getWorkersList(){ 

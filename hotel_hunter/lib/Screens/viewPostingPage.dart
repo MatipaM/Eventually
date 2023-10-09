@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hotel_hunter/Models/AppConstants.dart';
@@ -53,7 +54,16 @@ class _ViewPostingPageState extends State<ViewPostingPage> {
    // this._posting = widget.posting;
    
    _posting = widget.posting;
-   
+     _posting.getAllImagesFromStorage().whenComplete((){
+      setState(() {
+        
+      });
+  });
+   _posting.getHostFromFirestore().whenComplete((){
+    setState(() {
+        
+      });
+   });
     _completer = Completer();
     //_calculateLatAndLong();
     super.initState();
@@ -346,19 +356,30 @@ class _ViewPostingPageState extends State<ViewPostingPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
-                child: ListView.builder(
-                  itemCount: 
-                  _posting.reviews!.length,
-                  shrinkWrap: true,
-                  itemBuilder: (context, index){
-                    Review currentReview = 
-                    _posting.reviews![index]; 
-                    Review();
-                    return Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 10),
-                      child: ReviewListTile(review: currentReview,),
-                    );
-                  }))
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance.collection('postings/${this._posting.id}/reviews').snapshots(),
+                  builder: (context, snapshots){
+                    switch(snapshots.connectionState){
+                      case ConnectionState.waiting:
+                      return Center(child: CircularProgressIndicator(),);
+                      default:
+                      return  ListView.builder(
+                    itemCount: 
+                    _posting.reviews!.length,
+                    shrinkWrap: true,
+                    itemBuilder: (context, index){
+                      DocumentSnapshot snapshot = snapshots.data!.docs[index];
+                      Review currentReview = Review();
+                      currentReview.getReviewInfoFromFirestore(snapshot);
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 10, bottom: 10),
+                        child: ReviewListTile(review: currentReview,),
+                      );
+                    });
+                    }
+                  },
+                 
+                ))
             ],
           )
         ),

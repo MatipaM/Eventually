@@ -68,7 +68,7 @@ class _ExplorePageState extends State<ExplorePage> {
                     childAspectRatio: 5/6), 
                   itemBuilder: (context, index){
                     DocumentSnapshot snapshot = snapshots.data!.docs[index];
-                    Posting currentPosting = Posting();
+                    Posting currentPosting = Posting(id: snapshot.id);
                     currentPosting.getPostingInfoFromSnapshot(snapshot);
                     return Material(
                       color: AppConstants.backgroundColor,
