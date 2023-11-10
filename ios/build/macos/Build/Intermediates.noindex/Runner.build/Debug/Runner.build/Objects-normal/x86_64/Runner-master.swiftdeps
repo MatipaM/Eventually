@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "d9a2af4f8db0ad655118a1cec7d0462022ff0c7a8bad2be32a54b0f222e29b59"
+build_start_time: [1696502447, 33043000]
+build_end_time: [1696502457, 743765000]
+inputs:
+  "/Users/matipamarufu/Downloads/hotel_hunter/ios/macos/Flutter/GeneratedPluginRegistrant.swift": [1696502430, 447219080]
+  "/Users/matipamarufu/Downloads/hotel_hunter/ios/macos/Runner/AppDelegate.swift": [1690044407, 913643792]
+  "/Users/matipamarufu/Downloads/hotel_hunter/ios/macos/Runner/MainFlutterWindow.swift": [1690044407, 914854390]
