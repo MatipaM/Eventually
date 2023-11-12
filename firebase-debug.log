@@ -1,0 +1,44 @@
+[debug] [2023-11-12T15:25:10.004Z] ----------------------------------------------------------------------
+[debug] [2023-11-12T15:25:10.010Z] Command:       /opt/homebrew/Cellar/node/20.7.0/bin/node /opt/homebrew/bin/firebase init hosting
+[debug] [2023-11-12T15:25:10.010Z] CLI Version:   12.8.1
+[debug] [2023-11-12T15:25:10.010Z] Platform:      darwin
+[debug] [2023-11-12T15:25:10.010Z] Node Version:  v20.7.0
+[debug] [2023-11-12T15:25:10.010Z] Time:          Sun Nov 12 2023 17:25:10 GMT+0200 (South Africa Standard Time)
+[debug] [2023-11-12T15:25:10.010Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-12T15:25:10.050Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-12T15:25:10.050Z] > authorizing via signed-in user (ocmatipa@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/matipamarufu/Downloads/eventually-4/hotel_hunter
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-11-12T15:25:10.052Z] Using project from CLI flag: eventually-183fb
+[debug] [2023-11-12T15:25:10.054Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/eventually-183fb [none]
+[debug] [2023-11-12T15:25:10.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/eventually-183fb 200
+[debug] [2023-11-12T15:25:10.997Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/eventually-183fb {"projectId":"eventually-183fb","projectNumber":"732313027588","displayName":"Eventually","name":"projects/eventually-183fb","resources":{"hostingSite":"eventually-183fb","realtimeDatabaseInstance":"eventually-183fb-default-rtdb","storageBucket":"eventually-183fb.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_95753870-4bf3-4928-8e88-44b6d1011aad"}
+[info] i  Using project eventually-183fb (Eventually) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
